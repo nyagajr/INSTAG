@@ -25,3 +25,13 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.comment
+
+class Image(models.Model):
+    image_name = models.CharField(max_length =30)
+    image_caption = models.CharField(max_length =30)
+    image_profile = models.ForeignKey(Profile)
+    img_comments = models.ForeignKey(Comments)
+    image = models.ImageField(upload_to = 'images/')
+
+    def __str__(self):
+        return self.image_name
