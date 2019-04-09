@@ -21,3 +21,9 @@ def index(request):
     query_img = Image.objects.all()
 
     return render(request,'index.html', locals())
+
+def signup(request):
+    return redirect('/accounts/login/')
+    return render(request, 'registration_form.html')
+
+
