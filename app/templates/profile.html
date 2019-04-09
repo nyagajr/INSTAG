@@ -1,0 +1,38 @@
+{%extends 'all-templates/base.html'%}
+{{block.super}}
+{% block content %}
+<!-- <h1 style="text-align:center; font-family: 'Pattaya', sans-serif;">Institutions</h1><hr> -->
+
+
+{% for all in prof%}
+
+
+<div class="content-section">
+  <div class="media">
+
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-12">
+      <img class="rounded-circle account-img" src="{{all.profile_photo.url}}" alt="" style='border-radius:90%; margin-left:320px;'>
+      <div class="media-body">
+        <div class="col-md-4" style='padding:5px; margin-left:250px;'>
+          <h2 class="account-heading" style="font-family: 'Pattaya', sans-serif;"><b>{{all.name}}</b></h2><br><br>
+          <p> <b>Name:  </b>{{all.profile_name}}</p>
+          <p> <b>Bio:  </b>{{all.Bio}}</p><br>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
