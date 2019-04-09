@@ -4,8 +4,6 @@
 <!-- <h1 style="text-align:center; font-family: 'Pattaya', sans-serif;">Institutions</h1><hr> -->
 
 
-{% block content %}
-{{block.super}}
 {% for all in query_img%}
 
 
@@ -16,6 +14,7 @@
       <div class="panel-heading"><b>Profile Name: </b>{{all.image_profile}}</div>
       <form class="" action="" method="post">
         <div class="panel-body" style='border:#118400; box-shadow: 5px 10px 18px #888888;'><img src="{{all.image.url}}" alt="jpg" width="350" height="300" /></div>
+
 
 
 
