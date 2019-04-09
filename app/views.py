@@ -27,3 +27,7 @@ def signup(request):
     return render(request, 'registration_form.html')
 
 
+def profile(request):
+    prof = Profile.objects.all()
+    return render(request,'profile.html', locals())
+
