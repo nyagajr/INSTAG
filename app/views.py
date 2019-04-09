@@ -10,4 +10,14 @@ from .models import Profile,Comments,Image
 # Create your views here.
 
 def index(request):
+    if request.method == 'POST':
+        form = UploadForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form =UploadForm()
+    query_img = Image.objects.all()
+
     return render(request,'index.html', locals())
