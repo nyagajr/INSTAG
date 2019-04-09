@@ -31,3 +31,15 @@ def profile(request):
     prof = Profile.objects.all()
     return render(request,'profile.html', locals())
 
+def search_results(request):
+
+    if 'article' in request.GET and request.GET["article"]:
+        search_term = request.GET.get("article")
+        searched_articles = Profile.search_by_profile_name(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"searched_articles": searched_articles})
+
+    else:
+        message = "please enter a name"
+        return render(request, 'search.html',{"message":message})
