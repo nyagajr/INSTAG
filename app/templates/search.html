@@ -1,1 +1,31 @@
 {%extends 'all-templates/base.html'%}
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if searched_articles %}
+      <h2>Found searched term {{message}}</h2>
+    {% else %}
+      <h2>{{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if searched_articles %}
+    {% for article in searched_articles %}
+      <div class="col-sm-6 col-md-3">
+        <div class="panel-heading">
+          {{article.profile_name}}
+        </div>
+        <div class="panel-body">
+          <img src="{{article.image.url}}" alt="image" width="300" height="300">
+          {{article.img_comments}}
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
