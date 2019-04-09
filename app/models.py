@@ -13,3 +13,9 @@ class Profile(models.Model):
     Bio = models.CharField(max_length =50)
     def __str__(self):
         return self.profile_name
+
+    @classmethod
+    def search_by_profile_name(cls,search_term):
+        app = Profile.objects.filter(profile_name__icontains=search_term)
+        return app
+
