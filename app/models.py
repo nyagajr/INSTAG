@@ -19,3 +19,9 @@ class Profile(models.Model):
         app = Profile.objects.filter(profile_name__icontains=search_term)
         return app
 
+
+class Comments(models.Model):
+    comment = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.comment
