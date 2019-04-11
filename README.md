@@ -25,6 +25,9 @@ I used django framework to develop the applications user interface and backend.
 |---------------|-------------------|
 | signup                |user added |
 |Login     | user logged in|
+|search     | searches a term|
+|logout     | user logged out|
+
 ---------------------------------------------------------------------------------
 
 ## User Requirements.
